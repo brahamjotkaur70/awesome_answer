@@ -1,0 +1,27 @@
+<div class='shadow-sm p-3 mb-5 bg-white rounded overflow-wrap'>
+  <h1>
+    <span class='badge badge-pill badge-info'>
+      <%= @question.id %>
+    </span>
+    <%= @question.title %>
+  </h1>
+  <p class='shadow-none p-3 mb-5 bg-light rounded'><%= @question.body %></p>
+
+  <%# link_to arguments: name, path, options_object %>
+  <div>
+    <%= link_to(
+      "Edit",
+      edit_question_path(@question),
+      class: 'btn btn-info'
+    )
+    %>
+    <%= link_to(
+      "Delete",
+      question_path(@question),
+      method: :delete,
+      class: 'btn btn-danger',
+      data: { confirm: 'are you sure?' }
+    )
+    %>
+  </div>
+</div>
